@@ -1,0 +1,40 @@
+<div class="">
+  <nav class="navbar navbar-expand-sm header">
+    <div class="col-md-12 nav-wrapper">
+      <div class="navbar-header" style="width:100%;">
+        <div class="opener-left-menu is-open" style="background: none;">
+          <span class="top"></span>
+          <span class="middle"></span>
+          <span class="bottom"></span>
+        </div>
+      <a class="navbar-brand">
+        <h1 style="color:rgb(221, 221, 10);padding-top:10px">STAR WARS PORTAL</h1>
+      </a>
+      <select>
+          <option >People</option> <!--[routerLink]="/people" ou (click)="goToRouter()"-->
+          <option>Planets</option><!--[routerLink]="/planets"-->
+          <option>Starships</option><!--[routerLink]="/starships"-->
+      </select>
+    </div>
+  </div>
+</nav>
+<div style="display:flex;position: relative;"> 
+  <div style="width: 30vw;height: 100vh; background: rgba(0, 0, 0, 0.8);color: rgb(221, 221, 10);" class="text-left">
+     <ul *ngFor="let person of people">
+    <li class="more list-items" 
+    style="text-align: left;padding-top:10px;padding-bottom:10px;text-transform: uppercase;" (click)="getInfo(person)">
+      {{person.name}}
+    </li>
+  </ul>
+  </div>&nbsp;&nbsp;&nbsp;&nbsp;
+ <div style="background:rgba(0, 0, 0, 0.80); padding:30px;width: 60vw;padding-top: 40px;
+ height: 50vh; color: rgb(221, 221, 10);overflow: auto;" *ngIf="person?.length">
+    <ul>
+      <li *ngFor="let p of person, let i=index" style="text-transform: uppercase">
+        {{props[i]}} : {{p}}
+      </li>
+    </ul>
+ </div>
+</div>
+ 
+</div>
